@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Jeon Sueun</title>
+    <!-- Share preview metadata -->
+    <meta name="description" content="브랜드와 디지털을 연결하는 디자인에 대해 전수은에게 협업 또는 채용 문의를 보내세요." />
+    <link rel="canonical" href="https://jeon-sueun-portfolio-2026.workspace-478582.chatgpt.site/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="Jeon Sueun Portfolio" />
+    <meta property="og:title" content="Contact | Jeon Sueun" />
+    <meta property="og:description" content="브랜드와 디지털을 연결하는 디자인에 대해 전수은에게 협업 또는 채용 문의를 보내세요." />
+    <meta property="og:url" content="https://jeon-sueun-portfolio-2026.workspace-478582.chatgpt.site/contact.html" />
+    <meta property="og:image" content="https://jeon-sueun-portfolio-2026.workspace-478582.chatgpt.site/assets/og-contact.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LET’S CREATE TOGETHER 프로젝트 공유 이미지" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact | Jeon Sueun" />
+    <meta name="twitter:description" content="브랜드와 디지털을 연결하는 디자인에 대해 전수은에게 협업 또는 채용 문의를 보내세요." />
+    <meta name="twitter:image" content="https://jeon-sueun-portfolio-2026.workspace-478582.chatgpt.site/assets/og-contact.jpg" />
+    <!-- /Share preview metadata -->
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./contact.css" />
+  <script src="./contact.js" defer></script>
+</head>
+<body class="contact-page">
+  <header class="site-header" aria-label="주요 메뉴">
+    <nav class="site-nav">
+      <a href="./index.html#home">Home</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#projects">Projects</a>
+      <a href="./index.html#objects">Objects</a>
+      <a href="./contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+  <main class="contact-main">
+    <section class="contact-intro" aria-labelledby="contact-title">
+      <h1 id="contact-title">LET’S<br />CREATE<br />TOGETHER</h1>
+      <p>협업 및 채용 문의 연락처를 남기는 폼입니다.</p>
+    </section>
+    <section class="contact-form-panel" aria-label="문의 입력 폼">
+      <form id="contact-form">
+        <div class="form-field">
+          <label for="contact-name">Name <span aria-hidden="true">*</span><span class="field-state" aria-hidden="true">입력 중</span></label>
+          <input id="contact-name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required />
+        </div>
+        <div class="form-field">
+          <label for="contact-email">Email <span aria-hidden="true">*</span><span class="field-state" aria-hidden="true">입력 중</span></label>
+          <input id="contact-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required />
+        </div>
+        <div class="form-field">
+          <label for="contact-message">Message<span class="field-state" aria-hidden="true">입력 중</span></label>
+          <textarea id="contact-message" name="message" placeholder="Tell me about your message"></textarea>
+        </div>
+        <button class="contact-submit" type="submit">SEND MESSAGE <span aria-hidden="true">→</span></button>
+        <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="contact-footer">
+    <div class="contact-footer-main">
+      <div><strong>Contact</strong><a href="mailto:love_9336@naver.com">love_9336@naver.com</a><a href="tel:+12345678910">+1 (234) 567-8910</a></div>
+      <div class="contact-social">Instagram · LinkedIn ·</div>
+    </div>
+    <div class="contact-footer-bottom">© 2026 Jeon sueun</div>
+  </footer>
+</body>
+</html>

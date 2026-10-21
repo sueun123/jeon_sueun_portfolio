@@ -1,0 +1,17 @@
+# macOS and editor files
+.DS_Store
+._*
+.vscode/
+.idea/
+
+# Local configuration and dependencies
+.env
+.env.*
+!.env.example
+node_modules/
+
+# Generated output and logs
+dist/
+build/
+.cache/
+*.log
