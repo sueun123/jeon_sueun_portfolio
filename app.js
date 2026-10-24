@@ -2,6 +2,25 @@ const aboutSection = document.querySelector('#about');
 const projectsSection = document.querySelector('#projects');
 const objectsSection = document.querySelector('#objects');
 const navLinks = document.querySelectorAll('.site-nav a');
+const introScreen = document.querySelector('#portfolio-intro');
+const portfolioSite = document.querySelector('.page-shell');
+const stampEntry = document.querySelector('.stamp-entry');
+
+// Keep the entire existing site out of the rendered page until the stamp is activated.
+if (introScreen && portfolioSite && stampEntry) {
+  stampEntry.addEventListener('click', () => {
+    if (stampEntry.disabled) return;
+    stampEntry.disabled = true;
+    introScreen.classList.add('is-leaving');
+    window.setTimeout(() => {
+      introScreen.hidden = true;
+      portfolioSite.hidden = false;
+      portfolioSite.classList.add('is-entering');
+      history.replaceState(null, '', '#home');
+      updateCurrentSection();
+    }, 650);
+  }, { once: true });
+}
 
 // Build two matching groups so the title strip loops without a visible jump.
 document.querySelectorAll('.detail-marquee').forEach((marquee) => {

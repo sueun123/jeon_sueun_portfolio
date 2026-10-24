@@ -28,15 +28,16 @@
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <section class="cover-intro" aria-label="Portfolio introduction">
-      <img class="cover-art" src="./Portfolio표지.png" alt="전수은 포트폴리오 표지" />
-      <a class="stamp-entry" href="#home" aria-label="우표 이미지를 눌러 포트폴리오 시작하기"></a>
-      <span class="cover-jitter cover-jitter-title" aria-hidden="true"></span>
-      <span class="cover-jitter cover-jitter-name" aria-hidden="true"></span>
-      <span class="cover-jitter cover-jitter-tagline" aria-hidden="true"></span>
-      <span class="stamp-grain" aria-hidden="true"></span>
+    <section class="cover-intro" id="portfolio-intro" aria-label="Portfolio introduction">
+      <div class="intro-stage">
+        <img class="intro-object intro-portfolio-title" src="./Portfolio표지/portfolio-title.png" alt="" aria-hidden="true" />
+        <img class="intro-object intro-stamp" src="./Portfolio표지/stamp.png" alt="" aria-hidden="true" />
+        <img class="intro-object intro-name" src="./Portfolio표지/name.png" alt="" aria-hidden="true" />
+        <img class="intro-object intro-designer-title" src="./Portfolio표지/designer-title.png" alt="" aria-hidden="true" />
+        <button class="stamp-entry" type="button" aria-label="우표를 눌러 포트폴리오 시작하기"></button>
+      </div>
     </section>
-    <div class="page-shell" id="home">
+    <div class="page-shell" id="home" hidden>
       <header class="site-header" aria-label="주요 메뉴">
         <nav class="site-nav">
           <a href="#home" aria-current="page">Home</a>
