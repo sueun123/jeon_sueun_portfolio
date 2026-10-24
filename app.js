@@ -8,8 +8,9 @@ const stampEntry = document.querySelector('.stamp-entry');
 
 // Keep the entire existing site out of the rendered page until the stamp is activated.
 if (introScreen && portfolioSite && stampEntry) {
-  const returningFromMatcha = location.search.includes('from=matcha') && location.hash.toLowerCase() === '#projects';
-  if (returningFromMatcha) {
+  const returnSource = new URLSearchParams(location.search).get('from');
+  const returningToProjects = ['matcha', 'natural-beauty'].includes(returnSource) && location.hash.toLowerCase() === '#projects';
+  if (returningToProjects) {
     introScreen.hidden = true;
     introScreen.style.display = 'none';
     portfolioSite.hidden = false;
@@ -100,3 +101,45 @@ document.querySelectorAll('.share-page').forEach((button) => {
     }
   });
 });
+
+const naturalBeautyPage = document.querySelector('.project-natural-beauty');
+const naturalImageView = document.querySelector('#natural-image-view');
+if (naturalBeautyPage && naturalImageView) {
+  const detailImage = naturalImageView.querySelector('.natural-image-view-content');
+  const backButton = naturalImageView.querySelector('.natural-image-back');
+  let returnScrollY = 0;
+  let previousOverflow = '';
+  let returnFocus = null;
+  let detailIsOpen = false;
+
+  const closeNaturalDetail = () => {
+    if (!detailIsOpen) return;
+    detailIsOpen = false;
+    naturalImageView.hidden = true;
+    document.body.style.overflow = previousOverflow;
+    window.scrollTo(0, returnScrollY);
+    returnFocus?.focus({ preventScroll: true });
+  };
+
+  naturalBeautyPage.querySelectorAll('.natural-board-hotspot').forEach((hotspot) => {
+    hotspot.addEventListener('click', () => {
+      returnScrollY = window.scrollY;
+      previousOverflow = document.body.style.overflow;
+      returnFocus = hotspot;
+      detailImage.src = hotspot.dataset.detailSrc;
+      detailImage.alt = `${hotspot.getAttribute('aria-label').replace(' 상세 이미지 보기', '')} 상세 이미지`;
+      naturalImageView.hidden = false;
+      naturalImageView.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      detailIsOpen = true;
+      history.pushState({ naturalBeautyDetail: true }, '', '#natural-detail');
+      backButton.focus({ preventScroll: true });
+    });
+  });
+
+  backButton.addEventListener('click', () => {
+    if (history.state?.naturalBeautyDetail) history.back();
+    else closeNaturalDetail();
+  });
+  window.addEventListener('popstate', closeNaturalDetail);
+}
