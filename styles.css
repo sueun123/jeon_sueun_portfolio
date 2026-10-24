@@ -32,6 +32,8 @@ a { color: inherit; }
   opacity: 1;
   transition: opacity 650ms ease, visibility 650ms ease;
 }
+.cover-intro[hidden] { display: none; }
+body:has(#projects:target) .cover-intro { display: none; }
 .cover-intro.is-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
 .intro-stage {
   position: relative;
@@ -119,6 +121,7 @@ a { color: inherit; }
 }
 
 .page-shell { position: relative; min-height: 100svh; }
+body:has(#projects:target) .page-shell[hidden] { display: block; }
 
 /* Header / Figma reference: top aligned, right anchored. */
 .site-header {

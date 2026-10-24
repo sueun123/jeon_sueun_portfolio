@@ -21,6 +21,18 @@ body.project-detail-page { background: #fff; }
 .detail-image { display: block; width: 507px; height: 600px; margin: 230px auto 0; object-fit: cover; }
 .detail-image--wide { width: min(700px, calc(100% - 48px)); object-fit: contain; }
 .detail-image--personal { background-image: url('./assets/object-personal-reference.png'); background-repeat: no-repeat; background-size: 1300px auto; background-position: -400px -560px; }
+.project-sages-matcha .matcha-gallery {
+  display: grid;
+  gap: 42px;
+  width: min(835px, calc(100% - 48px));
+  margin: 230px auto 0;
+}
+.project-sages-matcha .matcha-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 .detail-contact { position: fixed; bottom: 0; left: 0; }
 
 @media (max-width: 1000px) {
@@ -41,5 +53,6 @@ body.project-detail-page { background: #fff; }
   .detail-image { width: min(calc(100% - 48px), 507px); height: auto; aspect-ratio: 507 / 600; margin: 90px auto 110px; }
   .detail-image--wide { object-fit: contain; }
   .detail-image--personal { height: 600px; background-position: -400px -560px; }
+  .project-sages-matcha .matcha-gallery { gap: 24px; margin-top: 90px; }
   .detail-contact { position: static; }
 }
