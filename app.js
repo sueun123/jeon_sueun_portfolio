@@ -8,6 +8,13 @@ const stampEntry = document.querySelector('.stamp-entry');
 
 // Keep the entire existing site out of the rendered page until the stamp is activated.
 if (introScreen && portfolioSite && stampEntry) {
+  const introStamp = introScreen.querySelector('.intro-stamp');
+  window.setTimeout(() => {
+    if (introScreen.hidden || introScreen.classList.contains('is-leaving')) return;
+    introScreen.classList.add('is-ready');
+    introStamp?.classList.add('is-attention');
+  }, 2000);
+
   stampEntry.addEventListener('click', () => {
     if (stampEntry.disabled) return;
     stampEntry.disabled = true;
