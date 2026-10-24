@@ -21,6 +21,61 @@ body {
 
 a { color: inherit; }
 
+.cover-intro {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  background: #eee8dc;
+  background-image: radial-gradient(#7a765f18 .7px, transparent .7px);
+  background-size: 5px 5px;
+}
+.cover-copy {
+  position: absolute;
+  inset: 7vh 5vw auto;
+  display: flex;
+  justify-content: space-between;
+  color: #41483a;
+  font-size: clamp(12px, 1vw, 18px);
+  font-weight: 700;
+  letter-spacing: .11em;
+}
+.cover-copy span, .cover-hint { transition: transform .25s ease; }
+.cover-intro:hover .cover-copy span:nth-child(1) { transform: rotate(-2deg) translateY(-3px); }
+.cover-intro:hover .cover-copy span:nth-child(2) { transform: rotate(1.5deg) translateY(3px); }
+.cover-intro:hover .cover-copy span:nth-child(3) { transform: rotate(-1deg) translateY(-2px); }
+.stamp-entry {
+  position: relative;
+  display: block;
+  width: min(72vw, 1120px);
+  line-height: 0;
+  cursor: pointer;
+  transform: rotate(-1.2deg);
+  transition: transform .35s ease;
+}
+.stamp-entry:hover, .stamp-entry:focus-visible { transform: rotate(0) scale(1.025); outline: none; }
+.stamp-entry img { display: block; width: 100%; height: auto; box-shadow: 0 24px 70px #342d1f26; }
+.stamp-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  transition: opacity .25s ease;
+}
+.stamp-entry:hover .stamp-grain, .stamp-entry:focus-visible .stamp-grain { opacity: .65; }
+.cover-hint { position: absolute; right: 6vw; bottom: 7vh; color: #41483a; font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+.cover-hint span { display: inline-block; font-size: 22px; }
+.cover-intro:hover .cover-hint { transform: rotate(2deg); }
+@media (max-width: 700px) {
+  .cover-copy { inset: 5vh 6vw auto; gap: 14px; flex-wrap: wrap; }
+  .stamp-entry { width: 92vw; }
+  .cover-hint { right: 6vw; bottom: 5vh; }
+}
+@media (prefers-reduced-motion: reduce) { .cover-intro *, .stamp-entry { transition: none !important; } }
+
 .page-shell { position: relative; min-height: 100svh; }
 
 /* Header / Figma reference: top aligned, right anchored. */
