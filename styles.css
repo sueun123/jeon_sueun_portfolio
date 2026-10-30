@@ -209,57 +209,62 @@ body:has(#projects:target) .page-shell[hidden] { display: block; }
 .hero-button:focus-visible { background: #34363f; }
 .hero-button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
-/* About / 1920 × 1162 reference: copy x=28, image column x≈692. */
-.about {
-  display: grid;
-  grid-template-columns: 600px 510px minmax(0, 1fr);
-  column-gap: 64px;
-  min-height: 1680px;
-  padding: 46px 28px 0;
-  scroll-margin-top: 0;
-}
-
-.about-copy { padding-top: 132px; }
-.about-eyebrow { margin: 0; color: #666; font-size: 13px; font-weight: 700; line-height: 1.25; }
-.about h2 { margin: 35px 0 0; color: #252525; font-size: 32px; font-weight: 400; line-height: 1.32; letter-spacing: -0.045em; }
-.about-intro { max-width: 510px; margin: 25px 0 0; color: #242424; font-size: 16px; line-height: 1.5; letter-spacing: -0.035em; }
-.about-facts { display: grid; gap: 49px; margin: 34px 0 0; }
-.about-fact { display: grid; grid-template-columns: 146px 1fr; font-size: 16px; line-height: 1.5; }
+/* About / 02 About reference: long editorial page with centered narrative sections. */
+.about { display: flex; flex-direction: column; min-height: 0; padding: 0 52px 80px; scroll-margin-top: 0; }
+.about-nameplate { margin: 205px auto 104px; color: var(--ink); font-size: clamp(48px, 4vw, 68px); font-weight: 750; line-height: 1; letter-spacing: -.065em; text-align: center; }
+.about-profile { width: min(100%, 560px); min-height: 820px; }
+.about-eyebrow, .about-section-label { margin: 0; color: #8ba9cb; font-size: 12px; font-weight: 700; letter-spacing: .02em; line-height: 1.3; }
+.about-profile h3 { margin: 35px 0 0; color: #252525; font-size: 31px; font-weight: 400; line-height: 1.35; letter-spacing: -.045em; }
+.about-intro { max-width: 530px; margin: 25px 0 0; color: #242424; font-size: 15px; line-height: 1.55; letter-spacing: -.035em; }
+.about-facts { display: grid; gap: 44px; margin: 37px 0 0; }
+.about-fact { display: grid; grid-template-columns: 146px 1fr; font-size: 15px; line-height: 1.5; }
 .about-fact dt, .about-fact dd { margin: 0; }
-.resume-button {
-  display: flex;
-  width: 220px;
-  height: 55px;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  margin: 63px 0 0 334px;
-  border-radius: 100px;
-  background: #202020;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
+.resume-button { display: flex; width: 220px; height: 55px; justify-content: center; align-items: center; gap: 5px; margin: 63px 0 0 315px; border-radius: 100px; background: #202020; color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; transition: transform 180ms ease, background-color 180ms ease; }
+.resume-button:hover, .resume-button:focus-visible { background: #343434; transform: translateY(-2px); }
+.resume-button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.about-introduction { width: min(100%, 660px); min-height: 580px; margin: 0 auto; padding-top: 12px; text-align: center; }
+.about-introduction h3 { margin: 42px 0 24px; font-size: 32px; font-weight: 400; line-height: 1.25; letter-spacing: -.05em; }
+.about-introduction p:not(.about-section-label) { margin: 13px 0 0; color: #4a4a4a; font-size: 15px; line-height: 1.65; }
+.about-introduction .about-korean-title { margin: 0 0 28px !important; color: #282828 !important; font-size: 23px !important; line-height: 1.4 !important; }
+.about-work { width: min(100%, 1140px); min-height: 650px; margin: 0 auto; padding-top: 7px; }
+.about-work > .about-section-label, .about-journey > .about-section-label, .about-attitude > .about-section-label { text-align: center; }
+.how-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 31px; }
+.how-work-card { display: grid; grid-template-columns: 35px 1fr; gap: 11px; min-height: 202px; padding: 13px 14px; border: 1px solid #c9c9c9; border-radius: 10px; background: #fff; transition: transform 240ms ease, box-shadow 240ms ease; }
+.card-number { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 5px; background: #f2f2f2; color: #333; font-size: 12px; font-weight: 700; }
+.card-kicker { margin: 1px 0 8px; color: #888; font-size: 10px; line-height: 1; }
+.how-work-card h3 { margin: 0 0 7px; font-size: 14px; font-weight: 600; line-height: 1.35; }
+.how-work-card p:not(.card-kicker) { margin: 0; color: #4d4d4d; font-size: 11px; line-height: 1.55; }
+.how-work-card small { display: block; margin-top: 8px; color: #8c8c8c; font-size: 9px; line-height: 1.4; }
+.about-journey { width: min(100%, 680px); min-height: 870px; margin: 0 auto; padding-top: 13px; text-align: center; }
+.journey-list { display: grid; gap: 27px; width: min(100%, 280px); margin: 34px auto 0; text-align: left; }
+.journey-step { display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: center; min-height: 100px; padding: 13px 15px; border: 1px solid #c9c9c9; border-radius: 10px; background: #fff; transition: transform 240ms ease, box-shadow 240ms ease; }
+.journey-icon { display: grid; width: 38px; height: 38px; place-items: center; color: #191919; font-size: 27px; line-height: 1; transition: transform 240ms ease; }
+.journey-step p { margin: 0 0 4px; color: #999; font-size: 10px; line-height: 1.2; }
+.journey-step h3 { margin: 0 0 4px; font-size: 13px; line-height: 1.35; }
+.journey-step div > span { color: #606060; font-size: 11px; line-height: 1.3; }
+.journey-note { margin: 25px 0 0; color: #606060; font-size: 12px; line-height: 1.5; }
+.about-attitude, .about-discover { width: min(100%, 1040px); margin: 0 auto; text-align: center; }
+.about-attitude { min-height: 710px; padding-top: 12px; }
+.about-section-heading { margin: 43px 0 34px; color: #333; font-size: 21px; font-weight: 500; line-height: 1.4; }
+.attitude-grid, .discover-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; text-align: left; }
+.attitude-card, .discover-card { min-width: 0; padding: 10px; border: 1px solid #c9c9c9; border-radius: 10px; background: #fff; transition: transform 240ms ease, box-shadow 240ms ease; }
+.attitude-card > span, .discover-card > span { display: block; margin: 0 0 10px; color: #999; font-size: 10px; line-height: 1; }
+.attitude-image { overflow: hidden; width: 100%; aspect-ratio: 1 / .9; border-radius: 7px; background: #f2f0eb; }
+.attitude-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 350ms cubic-bezier(.2,.7,.2,1); }
+.attitude-card > p, .discover-card > p { margin: 9px 0 0; font-size: 12px; line-height: 1.3; }
+.discover-card small { display: block; margin-top: 4px; color: #777; font-size: 10px; }
+.about-caption { margin: 29px 0 0; color: #666; font-size: 12px; line-height: 1.5; }
+.about-discover { min-height: 680px; padding-top: 22px; }
+.about-discover .about-section-heading { margin: 36px 0 30px; }
+.discover-grid .attitude-image { aspect-ratio: 1 / .95; }
+.resume-button-bottom { margin: 116px auto 0; }
+@media (hover: hover) and (pointer: fine) {
+  .how-work-card:hover, .journey-step:hover, .attitude-card:hover, .discover-card:hover { transform: translateY(-4px) scale(1.008); box-shadow: 0 8px 22px rgb(21 22 29 / 7%); }
+  .journey-step:hover .journey-icon { transform: rotate(-5deg) scale(1.08); }
+  .attitude-card:hover .attitude-image img, .discover-card:hover .attitude-image img { transform: scale(1.035); }
 }
-
-/* The wordmark starts low, then sticks near viewport center as the gray panels scroll past. */
-.about-visual { position: relative; grid-column: 2; height: 1550px; isolation: isolate; }
-.about-image { position: absolute; z-index: -1; left: 0; width: 100%; background: #d7d7d7; }
-.about-image-first { top: 0; height: 660px; }
-.about-image-second { top: 666px; height: 884px; background: #cfcfcf; }
-.about-name {
-  position: sticky;
-  z-index: 1;
-  top: 50vh;
-  width: max-content;
-  margin-top: 70vh;
-  margin-left: 25px;
-  color: var(--ink);
-  font-size: clamp(65px, 4.6vw, 88px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.055em;
-  white-space: nowrap;
-  pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+  .how-work-card, .journey-step, .journey-icon, .attitude-card, .discover-card, .attitude-image img, .resume-button { transition: none; }
 }
 
 /* Projects / centered list and gray preview match the 1920 × 1063 frame. */
@@ -327,12 +332,15 @@ body:has(#projects:target) .page-shell[hidden] { display: block; }
   .hero h1 span { white-space: normal; }
   .hero-lead { font-size: 23px; }
   .hero-description { font-size: 18px; }
-  .about { grid-template-columns: minmax(0, 1fr) minmax(260px, 38vw); column-gap: 30px; padding-right: 32px; }
-  .about h2 { font-size: 27px; }
+  .about { padding-right: 32px; padding-left: 32px; }
+  .about-nameplate { margin-top: 180px; font-size: clamp(48px, 5vw, 62px); }
+  .about-profile { min-height: 760px; }
+  .about-profile h3 { font-size: 28px; }
   .about-intro { max-width: 100%; }
   .about-fact { grid-template-columns: 112px 1fr; font-size: 14px; }
-  .resume-button { margin-left: auto; }
-  .about-name { margin-left: -105px; font-size: clamp(56px, 7vw, 74px); }
+  .about-profile .resume-button { margin-left: auto; }
+  .how-work-grid, .attitude-grid, .discover-grid { gap: 20px; }
+  .how-work-card { grid-template-columns: 30px 1fr; padding: 11px; }
   .projects-inner { width: min(100%, 682px); }
   .objects-inner { width: min(100%, 648px); }
 }
@@ -351,19 +359,35 @@ body:has(#projects:target) .page-shell[hidden] { display: block; }
   .contact-card-top { padding: 0 12px 7px; }
   .contact-card-line { width: 186px; margin-left: 0; }
   .contact-card small { margin-top: 16px; font-size: 12px; }
-  .about { display: block; min-height: auto; padding: 0 22px 210px; }
-  .about-copy { padding-top: 150px; }
-  .about-eyebrow { font-size: 11px; }
-  .about h2 { margin-top: 28px; font-size: clamp(25px, 6.2vw, 32px); }
-  .about h2 br { display: none; }
+  .about { display: flex; min-height: 0; padding: 0 22px 60px; }
+  .about-nameplate { margin: 125px auto 90px; font-size: clamp(42px, 11vw, 58px); }
+  .about-profile { min-height: 0; padding-bottom: 120px; }
+  .about-eyebrow, .about-section-label { font-size: 10px; }
+  .about-profile h3 { margin-top: 28px; font-size: clamp(25px, 6.2vw, 32px); }
   .about-intro { margin-top: 20px; font-size: 14px; }
-  .about-facts { gap: 34px; margin-top: 35px; }
-  .about-fact { grid-template-columns: 105px 1fr; font-size: 14px; }
-  .resume-button { margin: 48px 0 80px auto; }
-  .about-visual { width: min(74vw, 510px); height: 980px; margin-left: auto; }
-  .about-image-first { height: 450px; }
-  .about-image-second { top: 456px; height: 524px; }
-  .about-name { top: 47vh; margin-top: 340px; margin-left: -80px; font-size: clamp(42px, 11vw, 65px); }
+  .about-facts { gap: 28px; margin-top: 32px; }
+  .about-fact { grid-template-columns: 105px 1fr; font-size: 13px; }
+  .about-profile .resume-button { margin: 42px auto 0; }
+  .about-introduction { min-height: 0; padding: 20px 0 145px; }
+  .about-introduction h3 { margin: 32px 0 20px; font-size: 26px; }
+  .about-introduction .about-korean-title { font-size: 19px !important; }
+  .about-introduction p:not(.about-section-label) { font-size: 13px; }
+  .desktop-break { display: none; }
+  .about-work { min-height: 0; padding: 0 0 145px; }
+  .how-work-grid, .attitude-grid, .discover-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 25px; }
+  .how-work-card { min-height: 0; grid-template-columns: 34px 1fr; padding: 14px; }
+  .how-work-card p:not(.card-kicker) { font-size: 12px; }
+  .about-journey { min-height: 0; padding: 0 0 150px; }
+  .journey-list { width: min(100%, 320px); gap: 15px; margin-top: 25px; }
+  .journey-step { min-height: 84px; }
+  .about-attitude { min-height: 0; padding: 0 0 135px; }
+  .about-section-heading { margin: 30px 0 25px; font-size: 18px; }
+  .attitude-card, .discover-card { padding: 10px; }
+  .attitude-image { aspect-ratio: 1 / .85; }
+  .about-discover { min-height: 0; padding: 0 0 90px; }
+  .about-discover .about-section-heading { margin: 0 0 25px; }
+  .discover-grid .attitude-image { aspect-ratio: 1 / .85; }
+  .resume-button-bottom { margin: 55px auto 0; }
   .contact-card { position: static; }
   .projects { min-height: 740px; padding: 110px 22px 100px; }
   .projects-inner { display: block; width: 100%; }
