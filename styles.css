@@ -228,8 +228,8 @@ body:has(#projects:target) .page-shell[hidden] { display: block; }
 .about-introduction .about-korean-title { margin: 0 0 28px !important; color: #282828 !important; font-size: 23px !important; line-height: 1.4 !important; }
 .about-work { width: min(100%, 1140px); min-height: 650px; margin: 0 auto; padding-top: 7px; }
 .about-work > .about-section-label, .about-journey > .about-section-label, .about-attitude > .about-section-label { text-align: center; }
-.how-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 31px; }
-.how-work-card { display: grid; grid-template-columns: 35px 1fr; gap: 11px; min-height: 202px; padding: 13px 14px; border: 1px solid #c9c9c9; border-radius: 10px; background: #fff; transition: transform 240ms ease, box-shadow 240ms ease; }
+.how-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 32px; margin-top: 31px; }
+.how-work-card { display: grid; grid-template-columns: 35px 1fr; gap: 11px; min-height: 0; padding: 13px 14px; border: 1px solid #c9c9c9; border-radius: 10px; background: #fff; transition: transform 240ms ease, box-shadow 240ms ease; }
 .card-number { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 5px; background: #f2f2f2; color: #333; font-size: 12px; font-weight: 700; }
 .card-kicker { margin: 1px 0 8px; color: #888; font-size: 10px; line-height: 1; }
 .how-work-card h3 { margin: 0 0 7px; font-size: 14px; font-weight: 600; line-height: 1.35; }
